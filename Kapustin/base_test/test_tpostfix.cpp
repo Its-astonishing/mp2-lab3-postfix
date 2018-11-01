@@ -34,4 +34,12 @@ TEST(TPostfix, calculate_works_correct)
     const double expbf = 4;
     EXPECT_EQ(expbf, pf.calculate());
 }
+TEST(TPostfix, calculate_works_correct2)
+{
+    const string bf = "1+2+3*2-1";
+    TPostfix pf;
+    pf.toPostfix(bf);
+    const double expbf = 8;
+    EXPECT_EQ(expbf, pf.calculate());
+}
 
