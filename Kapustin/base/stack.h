@@ -44,13 +44,17 @@ public:
     }
     uni pop()
     {
-        int tmp = topIndex;
-        topIndex--;
-        return pMem[tmp];
+        if (topIndex >= 0)
+        {
+            int tmp = topIndex;
+            topIndex--;
+            return pMem[tmp];
+        }
     }
     uni top()
     {
-        return pMem[topIndex];
+        if (topIndex >= 0)
+            return pMem[topIndex];
     }
     int GetSize()
     {
