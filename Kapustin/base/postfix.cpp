@@ -167,7 +167,7 @@ void TPostfix::toPostfix(const string& str)
                 St.push_back(c);
             }
             else
-                for (int i = 0; i < St.GetSize(); i++)
+                for (int i = 0; i < St.getSize(); i++)
                     if (St.top() != "(")
                     {
                         postfix += St.pop();

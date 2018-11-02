@@ -36,7 +36,7 @@ TEST(TStack, push_back_changes_size)
     TStack<int> st(2);
     st.push_back(2);
     st.push_back(1);
-    EXPECT_EQ(2, st.GetSize());
+    EXPECT_EQ(2, st.getSize());
 }
 TEST(TStack, push_does_nothing_when_stack_is_full)
 {
@@ -52,7 +52,7 @@ TEST(TStack, pop_deletes_top_element)
     st.push_back(2);
     st.push_back(1);
     st.pop();
-    EXPECT_EQ(1, st.GetSize());
+    EXPECT_EQ(1, st.getSize());
 }
 TEST(TStack, pop_returns_top_element)
 {

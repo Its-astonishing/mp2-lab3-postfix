@@ -56,7 +56,7 @@ public:
         if (topIndex >= 0)
             return pMem[topIndex];
     }
-    int GetSize()
+    int getSize()
     {
         return topIndex + 1;
     }
