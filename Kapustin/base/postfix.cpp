@@ -126,6 +126,10 @@ bool TPostfix::isCorrect(const string& str)
     size_t npos = -1;
     if (isOperation(str[0]) || isOperation(str[str.size() - 1]))
         return 0;
+    if (str[0] == '(')
+        counter++;
+    if (str[0] == ')')
+        counter--;
     for (int i = 1; i < str.size(); i++)
     {
         if (str[i] == '(')
@@ -163,11 +167,15 @@ void TPostfix::toPostfix(const string& str)
                             postfix += St.pop();
                             postfix += ' ';
                         }
+                        else
+                            break;
                 }
                 St.push_back(c);
             }
             else
-                for (int i = 0; i < St.getSize(); i++)
+            {
+                int it = St.getSize();
+                for (int i = 0; i < it; i++)
                     if (St.top() != "(")
                     {
                         postfix += St.pop();
@@ -178,7 +186,7 @@ void TPostfix::toPostfix(const string& str)
                         St.pop();
                         break;
                     }
-
+            }
         }
         else
         {

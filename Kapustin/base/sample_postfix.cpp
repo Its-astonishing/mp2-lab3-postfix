@@ -9,11 +9,7 @@ int main()
     string expression;
     TPostfix postfix;
     vector<string> samples;
-    samples.push_back("1+2");
-    samples.push_back("1+2*(3-2)-4");
-    samples.push_back("1+2/(3-3)");
-    samples.push_back("10+2002*400-12");
-    samples.push_back("a+b");
+    samples.push_back("1+2/4/5-3");
     for (string c : samples)
     {
         cout << "Normal form:" << endl << c << endl;
@@ -22,6 +18,12 @@ int main()
         cout << "Calculation:" << endl << postfix.calculate() << endl;
         cout << endl;
     }
+    cout << "Input string to postfix and calculate it :" << endl;
+    cin >> expression;
+    postfix.toPostfix(expression);
+    cout << endl << "Postfix form:" << endl << postfix.getPostfix() << endl;
+    cout << "Calculation:" << endl << postfix.calculate() << endl;
+    cout << endl;
     system("pause");
     return 0;
 }
